@@ -48,7 +48,7 @@ public class DienThoai extends HangHoa{
 
     @Override
     public String toString() {
-        return "ma hang hoa: " + super.getMaHang() + "\nten: " + super.getTen() + "\ngia=" + super.getGia() + "\nnha san xuat: " + nhaSanXuat + "\ndung luong: " + dungLuong + "\nmau sac: " + mauSac; //To change body of generated methods, choose Tools | Templates.
+        return "ma hang hoa: " + super.getMaHang() + "\nten: " + super.getTen() + "\ngia: " + super.getGia() + "\nnha san xuat: " + nhaSanXuat + "\ndung luong: " + dungLuong + "\nmau sac: " + mauSac; //To change body of generated methods, choose Tools | Templates.
         
     }
     

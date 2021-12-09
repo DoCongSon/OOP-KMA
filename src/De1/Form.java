@@ -158,6 +158,7 @@ public class Form extends javax.swing.JFrame {
             FileWriter file = new FileWriter("dienthoai.dat", true);
             BufferedWriter bw = new BufferedWriter(file);
             bw.write(dt.toString());
+            bw.newLine();
             bw.close();
             file.close();
             

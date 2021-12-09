@@ -50,7 +50,7 @@ public class HangHoa {
 
     @Override
     public String toString() {
-        return "ma hang hoa: " + maHang + "\nten: " + ten + "\ngia=" + gia;
+        return "ma hang hoa: " + maHang + "\nten: " + ten + "\ngia: " + gia;
     }
    
 }
