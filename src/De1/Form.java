@@ -43,8 +43,8 @@ public class Form extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        addButton = new javax.swing.JToggleButton();
-        saveButton = new javax.swing.JToggleButton();
+        saveButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Đỗ Công Sơn");
@@ -61,17 +61,17 @@ public class Form extends javax.swing.JFrame {
 
         jLabel6.setText("Màu sắc");
 
-        addButton.setText("Thêm điện thoại");
-        addButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addButtonActionPerformed(evt);
-            }
-        });
-
         saveButton.setText("Lưu");
         saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveButtonActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Thêm điện thoại");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -81,19 +81,15 @@ public class Form extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(48, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(addButton, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
                         .addGap(58, 58, 58)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(dungLuong)
@@ -101,7 +97,11 @@ public class Form extends javax.swing.JFrame {
                             .addComponent(gia)
                             .addComponent(ten)
                             .addComponent(maHangHoa)
-                            .addComponent(mauSac, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE))))
+                            .addComponent(mauSac, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)))
+                    .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -133,24 +133,13 @@ public class Form extends javax.swing.JFrame {
                     .addComponent(jLabel6))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addButton)
-                    .addComponent(saveButton))
+                    .addComponent(saveButton)
+                    .addComponent(jButton1))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-        // TODO add your handling code here:  
-        dt.setMaHang(maHangHoa.getText());
-        dt.setGia(Integer.parseInt(gia.getText()));
-        dt.setDungLuong(dungLuong.getText());
-        dt.setMauSac(mauSac.getText());
-        dt.setTen(ten.getText());
-        dt.setNhaSanXuat(nhaSanXuat.getText());
-        System.out.println(dt);
-    }//GEN-LAST:event_addButtonActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         // TODO add your handling code here:
@@ -166,6 +155,17 @@ public class Form extends javax.swing.JFrame {
             System.out.println("Loi !!!");
         }
     }//GEN-LAST:event_saveButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        dt.setMaHang(maHangHoa.getText());
+        dt.setGia(Integer.parseInt(gia.getText()));
+        dt.setDungLuong(dungLuong.getText());
+        dt.setMauSac(mauSac.getText());
+        dt.setTen(ten.getText());
+        dt.setNhaSanXuat(nhaSanXuat.getText());
+        System.out.println(dt);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,9 +203,9 @@ public class Form extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton addButton;
     private javax.swing.JTextField dungLuong;
     private javax.swing.JTextField gia;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -215,7 +215,7 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JTextField maHangHoa;
     private javax.swing.JTextField mauSac;
     private javax.swing.JTextField nhaSanXuat;
-    private javax.swing.JToggleButton saveButton;
+    private javax.swing.JButton saveButton;
     private javax.swing.JTextField ten;
     // End of variables declaration//GEN-END:variables
 }
