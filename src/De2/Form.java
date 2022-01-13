@@ -37,6 +37,8 @@ public class Form extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         hoTen = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -57,6 +59,8 @@ public class Form extends javax.swing.JFrame {
         add = new javax.swing.JButton();
         save = new javax.swing.JButton();
         khac = new javax.swing.JRadioButton();
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Đỗ Công Sơn");
@@ -293,8 +297,10 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JTextField HSL;
     private javax.swing.JButton add;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JTextField diaChi;
     private javax.swing.JTextField hoTen;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
