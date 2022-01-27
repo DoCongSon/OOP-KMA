@@ -98,7 +98,7 @@
 - giống với Static variable là có thể dùng mà không cần phải khởi tạo đối tượng.
 - Trong cùng một lớp, phương thức tĩnh chỉ có thể gọi tới phương thức tĩnh hay biến tĩnh khác, không thể gọi tới phương thức và biến không phải là tĩnh
 
-11. **Method overloading (Nạp chồng phương thức)**
+12. **Method overloading (Nạp chồng phương thức)**
 
 - Nếu một lớp có nhiều phương thức cùng tên nhưng khác nhau về kiểu dữ liệu hoặc số các tham số, thì đó là nạp chồng phương thức.
 - Nạp chồng phương thức giúp bạn tránh được việc tạo ra các phương thức với tên gọi khác nhau, giúp cho code trở nên gọn gàng, dễ đọc hơn.
@@ -124,7 +124,7 @@
       }
   ```
 
-12. **Method overriding (ghi đè phương thức)**
+13. **Method overriding (ghi đè phương thức)**
 
     - Ghi đè phương thức trong java xảy ra nếu lớp con có phương thức giống lớp cha.
     - Nói cách khác, nếu lớp con cung cấp sự cài đặt cụ thể cho phương thức đã được cung cấp bởi một lớp cha của nó được gọi là ghi đè phương thức (method overriding) trong java.
@@ -137,7 +137,7 @@
     - **chú ý:**
       - Không ghi đè được phương thức static vì phương thức static được ràng buộc với class còn phương thức instance được ràng buộc với đối tượng. Static thuộc về vùng nhớ class còn instance thuộc về vùng nhớ heap.
 
-13. Sự khác nhau giữa overloading và overriding trong java
+14. Sự khác nhau giữa overloading và overriding trong java
     | STT | Nạp chồng phương thức (overloading) | Ghi đè phương thức (overriding) |
     |:---:|:---|:---|
     | 1 | Nạp chồng phương thức được sử dụng để giúp code của chương trình dễ đọc hơn. | Ghi đè phương thức được sử dụng để cung cấp cài đặt cụ thể cho phương thức được khai báo ở lớp cha. |
@@ -146,7 +146,7 @@
     | 4 | Nạp chồng phương thức là ví dụ về đa hình lúc biên dịch. | Ghi đè phương thức là ví dụ về đa hình lúc runtime. |
     | 5 | Trong java, nạp chồng phương thức không thể được thực hiện khi chỉ thay đổi kiểu giá trị trả về của phương thức. Kiểu giá trị trả về có thể giống hoặc khác. Giá trị trả về có thể giống hoặc khác, nhưng tham số phải khác nhau. | Giá trị trả về phải giống nhau. |
 
-14. **Abstraction method (Phương thức trừu tượng)**
+15. **Abstraction method (Phương thức trừu tượng)**
 
     - Một phương thức được khai báo là abstract và không có trình triển khai thì đó là phương thức trừu tượng.
     - Nếu bạn muốn một lớp chứa một phương thức cụ thể nhưng bạn muốn triển khai thực sự phương thức đó để được quyết định bởi các lớp con, thì bạn có thể khai báo phương thức đó trong lớp cha ở dạng abstract.
@@ -172,7 +172,7 @@
             }
       ```
 
-15. **Interface**
+16. **Interface**
 
     - Một Interface trong Java là một bản thiết kế của một lớp. Nó chỉ có các phương thức trừu tượng. Interface là một kỹ thuật để thu được tính trừu tượng hoàn toàn và đa kế thừa trong Java.
     - Một Interface trong Java là một tập hợp các phương thức trừu tượng (abstract). Một class triển khai một interface, do đó kế thừa các phương thức abstract của interface.
