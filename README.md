@@ -217,6 +217,8 @@
         - Một interface có thể kế thừa từ nhiều interface khác.
         - khi kế thừa sử dụng từ khoá `implements` thay vì `extends` như class
 
+17. **OOP là gì ???**
+    Lập trình hướng đối tượng là một kỹ thuật lập trình cho phép lập trình viên tạo ra các đối tượng trong code trừu tượng hóa các đối tượng thực tế trong cuộc sống. Hướng tiếp cận này hiện đang rất thành công và đã trở thành một trong những khuôn mẫu phát triển phần mềm, đặc biệt là các phần mềm cho doanh nghiệp.
 ## II. 4 tính chất của lập trình hướng đối tượng
 
 1. **Encapsulation (Đóng gói)**
