@@ -367,3 +367,127 @@
    - Có 2 cách để đạt được sự trừu tượng hóa trong java:
      - Sử dụng lớp abstract
      - Sử dụng interface
+
+## III. Tổng hợp các hàm hay dùng trong kiểm tra.
+
+1. **Đọc ghi file**
+
+   - BufferedReader (BufferedWriter) được sử dụng để đọc (ghi) văn bản từ một input stream (output stream) dựa trên các ký tự (character stream). Nó có thể được sử dụng để đọc (ghi) dữ liệu theo dòng (line by line). Nó giúp hiệu suất nhanh.
+   - VD:
+     ```java
+     // đọc file
+         FileReader fr = new FileReader("D:\\testout.txt");
+         BufferedReader br = new BufferedReader(fr);
+         ...
+         br.close();
+         bf.close();
+     // ghi file
+         FileWriter writer = new FileWriter("D:\\testout.txt");
+         BufferedWriter buffer = new BufferedWriter(writer);
+         ...
+         buffer.close();
+         writer.close();
+     ```
+   - Phương thức `split` trong Java String
+     - Phương thức split() tách chuỗi này theo biểu thức chính quy(regular expression) và trả về mảng chuỗi.
+     - ```java
+           String str = "java string split method"
+           String[] arr = str.split("\\s");
+           // tách các từ trong str theo khoảng trắng
+           // "\\$" tách theo kí tự dặt biệt
+       ```
+
+1. **Table**
+   - cách ghi dữ liệu vào bảng
+     - getModel() của bảng hoặc tạo mới
+     - thêm các cột bằng `tableModel.addColumn("tên cột");`
+     - thêm các hàng bằng `tableModel.addRow(rowData);`
+   - vd:
+   ```java
+       // getModel (TH đã tạo các cột từ giao diện kéo thả)
+       DefaultTableModel tableModel = (DefaultTableModel) table.getModel();
+       // tạo mới (TH chưa tạo)
+       // DefaultTableModel tableModel = new DefaultTable();
+       // table.setModel(tableModel);
+       // tableModel.addColumn("Ho ten");
+       // ...
+       for (Student student : list) {
+           Object[] rowData = new Object[] {student.getHoTen(), student.getNgaySinh(), student.getDiaChi(), student.getGioiTinh(), student.getMaSV(), student.getEmail(), student.getDiem()};
+           tableModel.addRow(rowData);
+       }
+   ```
+1. **sắp xếp**
+
+   - cách 1: cài đặt phương thức compareTo() trong đối tượng cần sắp xếp.
+
+   ```java
+   package vn.viettuts.collection;
+   import java.util.ArrayList;
+   import java.util.Collections;
+   import java.util.List;
+   /**
+    * Student class
+    *
+    * @author viettuts.vn
+    */
+   class Student implements Comparable<Student> {
+       private int id;
+       private String name;
+       private int age;
+       private String address;
+
+       public Student() {
+       }
+
+       public Student(int id, String name, int age, String address) {
+           super();
+           this.id = id;
+           this.name = name;
+           this.age = age;
+           this.address = address;
+       }
+
+       // getter & setter
+
+       @Override
+       public String toString() {
+           return "Student@id=" + id + ",name=" + name
+                   + ",age=" + age + ",address=" + address;
+       }
+
+       @Override
+       public int compareTo(Student student) {
+           // sort student's name by ASC
+           return this.getName().compareTo(student.getName());
+       }
+   }
+
+   public class CollectionsExample6 {
+       public static void main(String[] args) {
+           // create list students
+           List<Student> listStudents = new ArrayList<Student>();
+           // add students to list
+           listStudents.add(new Student(1, "Vinh", 19, "Hanoi"));
+           listStudents.add(new Student(2, "Hoa", 19, "Hanoi"));
+           listStudents.add(new Student(3, "Phu", 20, "Hanoi"));
+           listStudents.add(new Student(4, "Quy", 22, "Hanoi"));
+           // sort list student
+           Collections.sort(listStudents);
+           // show list students
+           for (Student student : listStudents) {
+               System.out.println(student.toString());
+           }
+       }
+   }
+   ```
+
+- cách 2 tạo đối tượng nạc danh
+
+```java
+Collections.sort(listStudents, new Comparator<Student>() {
+    @Override
+    public int compare(Student o1, Student o2) {
+        return o1.getName().compareTo(o2.getName());
+    }
+});
+```
